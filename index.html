@@ -211,7 +211,7 @@
             </div>
         </div>
 
-        <div class="ps-3">
+        <div class="ps-3 mb-4">
             <div class="d-flex align-items-center justify-content-between mb-3">
                 <div class="title">
                     <img src="./public/img/icon/star.svg" alt="">
@@ -224,6 +224,45 @@
             </div>
             <div class="topicList">
                 <div class="swiper-container home_selected">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <a href="" class="topicList_item">
+                            <div class="topicList_pic"><img src="./public/img/unsplash_gwE9vXSi7Xw.png" alt=""></div>
+                            <h4>主題歌單名稱主題歌單名稱主題歌單名稱主題歌單名稱主題歌單名稱主題歌單名稱主題歌單名稱主題歌單名稱</h4>
+                            <div class="topicList_look">
+                                <span>前往查看</span>
+                                <img src="./public/img/btn/go.svg" alt="">
+                            </div>
+                        </a>
+                      </div>
+                      <div class="swiper-slide">
+                        <a href="" class="topicList_item">
+                            <div class="topicList_pic"><img src="./public/img/unsplash_gwE9vXSi7Xw2.png" alt=""></div>
+                            <h4>主題歌單名稱主題歌單名稱主題歌單名稱主題歌單名稱主題歌單名稱主題歌單名稱主題歌單名稱主題歌單名稱</h4>
+                            <div class="topicList_look">
+                                <span>前往查看</span>
+                                <img src="./public/img/btn/go.svg" alt="">
+                            </div>
+                        </a>
+                      </div>
+                    </div>     
+                </div>
+            </div>
+        </div>
+
+        <div class="ps-3">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <div class="title">
+                    <img src="./public/img/icon/musicbox.svg" alt="">
+                    <h3 class="title_text">音樂盒專區</h3>
+                </div>
+                <a href="" class="lookmore">
+                    <span>看更多</span>
+                    <img src="./public/img/icon/arrow-right.svg" alt="">
+                </a>
+            </div>
+            <div class="topicList">
+                <div class="swiper-container home_musicBox">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
                         <a href="" class="topicList_item">
@@ -324,15 +363,22 @@
             speed: 500,
          });
 
-          // 最新發現
-          var swiper = new Swiper(".home_new", {
+        // 最新發現
+        var swiper = new Swiper(".home_new", {
             slidesPerView: 2.2,
             spaceBetween: 16,
             speed: 500,
          });
 
-           // 精選主題
-           var swiper = new Swiper(".home_selected", {
+        // 精選主題
+        var swiper = new Swiper(".home_selected", {
+            slidesPerView: 1.3,
+            spaceBetween: 16,
+            speed: 500,
+         });
+
+        // 音樂盒專區
+        var swiper = new Swiper(".home_musicBox", {
             slidesPerView: 1.3,
             spaceBetween: 16,
             speed: 500,
