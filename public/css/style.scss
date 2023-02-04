@@ -74,8 +74,20 @@ button {
     outline: none;
 }
 
+input {
+    border: 0;
+    background-color: transparent;
+    border-radius: 0;
+    outline: none;
+    color: $color-black;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
 main {
     padding-top: 126.8px;
+    &.page-search {
+        padding-top: 96px;
+    }
 }
 
 .container {
@@ -210,6 +222,37 @@ main {
                     opacity: 1;
                 }
             }
+        }
+    }
+    &-search {
+        >.container {
+            box-shadow: none;
+        }
+    }
+    &_searchBar {
+        &_arrow {
+            cursor: pointer;
+            width: 36px;
+            img {
+                width: 24px;
+            }
+        }
+        &_input {
+            width: calc(100% - 36px);
+            border: 1px solid #EFF1F2;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 12px;
+            input {
+                width: calc(100% - 56px - 8px);
+                height: 100%;
+                font-size: 14px;
+            }
+        }
+        &_btn {
+            width: 28px;
         }
     }
     @media screen and (max-width: 370px) {
