@@ -891,13 +891,15 @@ main.page-search {
   position: relative;
   height: 100%;
   white-space: nowrap;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.tab-main a.active {
+.tab-main a.active, .tab-main a:hover {
   color: #D3060F;
 }
 
-.tab-main a.active::after {
+.tab-main a.active::after, .tab-main a:hover::after {
   opacity: 1;
 }
 
@@ -910,6 +912,8 @@ main.page-search {
   left: 0;
   bottom: 0;
   opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 @media screen and (max-width: 720px) {
