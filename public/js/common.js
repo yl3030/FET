@@ -34,3 +34,88 @@ $(".anno_title").click(function(){
 $(".footer_top").click(function(){
     $("html, body").animate({scrollTop: 0}, 300);
 })
+
+$(".coupon_record_num").each(function(i){
+    let num = i;
+    if(!$(this).hasClass("text")) {
+        if(num < 10) {
+            num = "0" + num
+        }
+        $(this).text(num);
+    }
+})
+
+$(".header_arrow").click(function(){
+    history.back();
+})
+
+function tabRecord(){
+    if($("#pills-try-tab").hasClass("active")){
+        $(this).parents(".tab-record").removeClass("buy").addClass("try");
+    }
+    if($("#pills-buy-tab").hasClass("active")){
+        $(this).parents(".tab-record").removeClass("try").addClass("buy");
+    }
+}
+
+tabRecord();
+
+$("#pills-try-tab").click(function(){
+    $(this).parents(".tab-record").removeClass("buy").addClass("try");
+})
+$("#pills-buy-tab").click(function(){
+    $(this).parents(".tab-record").removeClass("try").addClass("buy");
+})
+
+$(".songList-smallPic").each(function(){
+    $(this).find(".songList-smallPic_num").each(function(i){
+        let num = i + 1;
+        $(this).text(num);
+    })
+})
+
+$(".my_setting_active").click(function(){
+    $(this).parents(".my_setting").find(".my_setting_list").slideToggle(300);
+})
+$(document).click(function (event) {
+    var setting = $(".my_setting");
+    if (!setting.is(event.target) && setting.has(event.target).length === 0) {
+        $(".my_setting_list").slideUp(300);
+    }
+});
+
+$(".my_setting_list>li").click(function(){
+    let text = $(this).text();
+    $(this).parents(".my_setting").find(".my_setting_active").find("span").text(text);
+    $(this).addClass("active").siblings("li").removeClass("active");
+    $(this).parents(".my_setting_list").slideUp(300);
+})
+
+$(".cube").click(function(){
+    let open = false;
+    if($(this).hasClass("active")) {
+        $(this).removeClass("active");
+        $(this).parents(".songList-check_item").siblings(".songList-check_item").each(function(i){
+            if($(this).find(".cube").hasClass("active")) {
+                open = true;
+            }
+        })
+    }else {
+        $(this).addClass("active");
+        open = true;
+    }
+    if( open == true) {
+        $(".btn-addSlider").attr("disabled",false);
+    }else {
+        $(".btn-addSlider").attr("disabled",true);
+    }
+})
+
+$(".group_list_num").each(function(i){
+    let num = i + 1;
+    $(this).text(num + ".");
+})
+
+$(".switch").click(function(){
+    $(this).toggleClass("active");
+})
