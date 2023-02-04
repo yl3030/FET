@@ -258,11 +258,6 @@ main.page-search {
   opacity: 1;
 }
 
-.header-search > .container {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
 .header_searchBar_arrow {
   cursor: pointer;
   width: 36px;

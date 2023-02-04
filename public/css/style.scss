@@ -224,11 +224,6 @@ main {
             }
         }
     }
-    &-search {
-        >.container {
-            box-shadow: none;
-        }
-    }
     &_searchBar {
         &_arrow {
             cursor: pointer;
