@@ -1,10 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
 $color-black: #231F20;
 $color-gray: #EFF1F2;
 $primary: #D3060F;
 $coral100: #FC7B66;
 $dark: #8A8A8A;
+$blue: #1642B1;
 $transition-common: 0.3s;
+
+@font-face {
+    font-family: "Noto Sans TC";
+    src: url(../font/NotoSansTC-Thin.otf);
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "Noto Sans TC";
+    src: url(../font/NotoSansTC-Light.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Noto Sans TC";
+    src: url(../font/NotoSansTC-Light.otf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Noto Sans TC";
+    src: url(../font/NotoSansTC-Regular.otf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Noto Sans TC";
+    src: url(../font/NotoSansTC-Medium.otf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Noto Sans TC";
+    src: url(../font/NotoSansTC-Bold.otf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Noto Sans TC";
+    src: url(../font/NotoSansTC-Black.otf);
+    font-weight: 900;
+}
 
 body {
     font-family: 'Noto Sans TC', sans-serif;
@@ -52,6 +95,13 @@ main {
         margin: 0;
         font-size: 16px;
         font-weight: 700;
+    }
+}
+
+.link {
+    color: #2F59C4;
+    &:hover {
+        color: #2F59C4;
     }
 }
 
@@ -194,6 +244,23 @@ main {
                     background-color: $primary;
                 }
             }
+            .swiper-button {
+                &-prev {
+                    left: 0;
+                }
+                &-next {
+                    right: 0;
+                }
+                &-prev, &-next {
+                    width: calc(10% - 16px);
+                    height: calc(100% - 36px);
+                    top: 0;
+                    margin: 0;
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
         }
         &_pic {
             position: relative;
@@ -212,99 +279,227 @@ main {
 }
 
 .songList {
-    &_item {
-        h4 {
-            margin-bottom: 2px;
-            line-height: 1.4;
-            font-size: 16px;
-            font-weight: normal;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
-            overflow: hidden;
+    &-bigPic {
+        &_item {
+            h4 {
+                margin-bottom: 2px;
+                line-height: 1.4;
+                font-size: 16px;
+                font-weight: normal;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+            }
+            p {
+                margin-bottom: 8px;
+                color: #7A7A7A;
+                line-height: 1.4;
+                font-size: 12px;
+                font-weight: normal;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+            }
         }
-        p {
-            margin-bottom: 8px;
-            color: #7A7A7A;
-            line-height: 1.4;
-            font-size: 12px;
-            font-weight: normal;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
-            overflow: hidden;
-        }
-    }
-    &_pic {
-        width: 100%;
-        padding-bottom: 100%;
-        position: relative;
-        cursor: pointer;
-        margin-bottom: 8px;
-        &_main {
-            position: absolute;
+        &_pic {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            top: 0;
-            left: 0;
-        }
-        &.playing {
-            .songList_icon {
-                img {
-                    &.play {
-                        opacity: 0;
-                    }
-                    &.stop {
-                        opacity: 1;
+            padding-bottom: 100%;
+            position: relative;
+            cursor: pointer;
+            margin-bottom: 8px;
+            &_main {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+            }
+            &.playing {
+                .songList-bigPic_icon {
+                    img {
+                        &.play {
+                            opacity: 0;
+                        }
+                        &.stop {
+                            opacity: 1;
+                        }
                     }
                 }
             }
         }
-    }
-    &_icon {
-        position: absolute;
-        width: 28px;
-        height: 28px;
-        bottom: 10px;
-        right: 10px;
-        img {
+        &_icon {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            top: 0;
-            left: 0;
-            transition: $transition-common;
-            &.stop {
-                opacity: 0;
+            width: 28px;
+            height: 28px;
+            bottom: 10px;
+            right: 10px;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                top: 0;
+                left: 0;
+                transition: $transition-common;
+                &.stop {
+                    opacity: 0;
+                }
             }
+        }
+
+    }
+    &-smallPic {
+        &_item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        &_num {
+            width: 32px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        &_pic {
+            width: 48px;
+            height: 48px;
+            position: relative;
+            cursor: pointer;
+            &_main {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+            }
+            &.playing {
+                .songList-smallPic_icon {
+                    img {
+                        &.play {
+                            opacity: 0;
+                        }
+                        &.stop {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        &_icon {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: 3px;
+            bottom: 3px;
+            >img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                top: 0;
+                left: 0;
+                transition: 0.3s;
+                &.stop {
+                    opacity: 0;
+                }
+            }
+        }
+        &_text {
+            width: calc(100% - 32px - 48px - 28px);
+            padding: 0 8px;
+            h4 {
+                font-size: 16px;
+                font-weight: 400;
+                margin-bottom: 4px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+            }
+            p {
+                margin: 0;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                color: $dark;
+                font-size: 12px;
+            }
+        }
+        &_download {
+            width: 28px;
         }
     }
 }
 
 .btn-download {
-    width: 100%;
-    height: 32px;
-    color: #fff;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-        margin-left: 4px;
-    }
-    &.normal {
-        background-color: $primary;
-    }
-    &.downloading {
-        background-color: #9B9B9B;
+    &-text {
+        width: 100%;
+        height: 32px;
+        color: #fff;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         img {
-            animation: loading 0.8s linear infinite;
+            margin-left: 4px;
+        }
+        &.normal {
+            background-color: $primary;
+        }
+        &.downloading {
+            background-color: #9B9B9B;
+            img {
+                animation: loading 0.8s linear infinite;
+            }
+        }
+        &.downloaded {
+            background-color: $coral100;
         }
     }
-    &.downloaded {
-        background-color: $coral100;
+    &-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 24px;
+            height: 24px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        &.normal {
+            background-color: $primary;
+            &::before {
+                background-image: url(../img/icon/download.svg);
+            }
+        }
+        &.downloading {
+            background-color: #9B9B9B;
+            &::before {
+                background-image: url(../img/icon/loading.svg);
+                animation: loading2 0.8s linear infinite;
+            }
+        }
+        &.downloaded {
+            background-color: $coral100;
+            &::before {
+                background-image: url(../img/icon/true.svg);
+            }
+        }
     }
 }
 
@@ -314,6 +509,15 @@ main {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes loading2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
@@ -457,10 +661,93 @@ main {
         color: $color-gray;
     }
     &_top {
-        width: 32px;
+        // width: 32px;
         cursor: pointer;
-        position: absolute;
-        right: 16px;
+        position: fixed;
+        // right: 16px;
+        left: calc(50vw + 720px / 2 - 16px - 40px);
         bottom: 16px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(138, 138, 138, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        img {
+            width: 30px;
+        }
+    }
+    @media screen and (max-width: 720px) {
+        &_top {
+            left: calc(100% - 16px - 40px);
+        }
+    }
+}
+
+.tab {
+    &-main {
+        height: 45px;
+        overflow-x: auto;
+        display: flex;
+        align-items: center;
+        li {
+            height: 100%;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 6px;
+            font-size: 14px;
+            position: relative;
+            height: 100%;
+            white-space: nowrap;
+            &.active {
+                color: $primary;
+                &::after {
+                    opacity: 1;
+                }
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 3px;
+                background-color: $primary;
+                left: 0;
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+        @media screen and (max-width: 720px) {
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+}
+
+.message {
+    position: fixed;
+    width: 100%;
+    max-width: 720px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 24px;
+    font-size: 14px;
+    &.bg-black {
+        background-color: $color-black;
+        color: #fff;
+    }
+    &.bg-red {
+        background-color: $primary;
+        color: #fff;
+    }
+    &.bg-blue {
+        background-color: $blue;
+        color: #fff;
     }
 }

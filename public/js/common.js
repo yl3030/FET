@@ -1,5 +1,5 @@
 function btnDownload() {
-    $(".btn-download").each(function(){
+    $(".btn-download-text").each(function(){
         if($(this).hasClass("normal")) {
             let span = $("<span>立即下載</span>");
             $(this).append(span);
@@ -20,8 +20,9 @@ $(".songList_pic").click(function(){
     if($(this).hasClass("playing")) {
         $(this).removeClass("playing");
     }else {
+        $(".songList_pic").removeClass("playing");;
         $(this).addClass("playing");
-        $(this).parents(".swiper-slide").siblings(".swiper-slide").find(".songList_pic").removeClass("playing");;
+        // $(this).parents(".swiper-slide").siblings(".swiper-slide").find(".songList_pic").removeClass("playing");;
     }
 })
 
