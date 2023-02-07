@@ -154,6 +154,8 @@ main.page-more-inner {
   color: #fff;
   padding: 6px 12px;
   background-color: #D3060F;
+  display: block;
+  text-align: center;
 }
 
 .btn-redBg-big {
@@ -1425,14 +1427,27 @@ main.page-more-inner {
 }
 
 .musicBoxList_btn {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: calc(52px + 8px + 52px);
 }
 
-.musicBoxList_btn button {
+.musicBoxList_btn button, .musicBoxList_btn a {
   padding-left: 0;
   padding-right: 0;
   width: 52px;
+  display: block;
+}
+
+.musicBoxList_btn a:hover {
+  color: #fff;
 }
 
 .musicBox_title {
@@ -1601,5 +1616,45 @@ main.page-more-inner {
 
 .group_setting_content {
   margin-bottom: 40px;
+}
+
+.swal2-icon.swal2-error {
+  border-color: #8A8A8A !important;
+  background-color: #8A8A8A;
+  color: #fff;
+}
+
+.swal2-icon.swal2-error [class^=swal2-x-mark-line] {
+  background-color: #fff !important;
+}
+
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+  background-color: #8A8A8A !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+  border-color: #8A8A8A !important;
+  color: #fff;
+}
+
+.swal2-title {
+  font-size: 16px !important;
+  font-weight: normal !important;
+  color: #231F20 !important;
+}
+
+.swal2-styled.swal2-confirm {
+  border-radius: 0 !important;
+  background-color: #D3060F !important;
+}
+
+.swal2-styled.swal2-confirm:focus {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.swal2-popup {
+  border-radius: 0 !important;
+  width: 320px !important;
 }
 /*# sourceMappingURL=style.css.map */

@@ -119,3 +119,4 @@ $(".group_list_num").each(function(i){
 $(".switch").click(function(){
     $(this).toggleClass("active");
 })
+

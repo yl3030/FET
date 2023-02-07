@@ -159,6 +159,8 @@ main {
         color: #fff;
         padding: 6px 12px;
         background-color: $primary;
+        display: block;
+        text-align: center;
     }
     &-redBg-big {
         font-size: 16px;
@@ -1189,12 +1191,21 @@ main {
         padding: 0 8px;
     }
     &_btn {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: calc(52px + 8px + 52px);
-        button {
+        button, a {
             padding-left: 0;
             padding-right: 0;
             width: 52px;
+            display: block;
+
+        }
+        a {
+            &:hover {
+                color: #fff;
+            }
         }
     }
 }
@@ -1330,4 +1341,48 @@ main {
             margin-bottom: 40px;
         }
     }
+}
+
+.swal2-icon {
+    &.swal2-error {
+        border-color: $dark !important;
+        background-color: $dark;
+        color: #fff;
+        [class^=swal2-x-mark-line] {
+            background-color: #fff !important;
+        }
+    }
+    &.swal2-success {
+        // border-color: $dark !important;
+        // background-color: $dark;
+        // color: #fff;
+        [class^=swal2-success-line] {
+            background-color: $dark !important;
+            // background-color: #fff !important;
+        }
+        .swal2-success-ring {
+            border-color: $dark !important;
+            // background-color: $dark;
+            color: #fff;
+        }
+    }
+}
+
+.swal2-title {
+    font-size: 16px !important;
+    font-weight: normal !important;
+    color: $color-black !important;
+}
+
+.swal2-styled.swal2-confirm {
+    border-radius: 0 !important;
+    background-color: $primary !important;
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+.swal2-popup {
+    border-radius: 0 !important;
+    width: 320px !important;
 }

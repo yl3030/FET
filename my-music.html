@@ -7,6 +7,7 @@
     <title>遠傳電信來電答鈴小網</title>
     <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="./public/css/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./public/css/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
@@ -62,7 +63,7 @@
                     <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
                     <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
                 </div>
-                <button class="btn-redBorder">刪除</button>
+                <button class="btn-redBorder" onclick="settingSettingError()">刪除</button>
             </div>
             <div class="songList-check_item">
                 <div class="songList-check_box">
@@ -79,7 +80,7 @@
                     <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
                     <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
                 </div>
-                <button class="btn-redBorder">刪除</button>
+                <button class="btn-redBorder" onclick="settingSettingSuccess()">刪除</button>
             </div>
             <div class="songList-check_item">
                 <div class="songList-check_box">
@@ -96,7 +97,7 @@
                     <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
                     <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
                 </div>
-                <button class="btn-redBorder">刪除</button>
+                <button class="btn-redBorder" onclick="settingConfirm()">刪除</button>
             </div>
             <div class="songList-check_item">
                 <div class="songList-check_box">
@@ -113,7 +114,7 @@
                     <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
                     <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
                 </div>
-                <button class="btn-redBorder">刪除</button>
+                <button class="btn-redBorder" onclick="settingDeleteSuccess()">刪除</button>
             </div>
             <div class="songList-check_item">
                 <div class="songList-check_box">
@@ -130,7 +131,7 @@
                     <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
                     <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
                 </div>
-                <button class="btn-redBorder">刪除</button>
+                <button class="btn-redBorder" onclick="settingDeleteError()">刪除</button>
             </div>
             <div class="songList-check_item">
                 <div class="songList-check_box">
@@ -147,7 +148,7 @@
                     <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
                     <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
                 </div>
-                <button class="btn-redBorder">刪除</button>
+                <button class="btn-redBorder" onclick="settingSettingSuccess()">刪除</button>
             </div>
             <div class="songList-check_item">
                 <div class="songList-check_box">
@@ -164,7 +165,7 @@
                     <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
                     <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
                 </div>
-                <button class="btn-redBorder">刪除</button>
+                <button class="btn-redBorder" onclick="settingSettingSuccess()">刪除</button>
             </div>
             <div class="songList-check_item">
                 <div class="songList-check_box">
@@ -181,7 +182,7 @@
                     <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
                     <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
                 </div>
-                <button class="btn-redBorder">刪除</button>
+                <button class="btn-redBorder" onclick="settingSettingSuccess()">刪除</button>
             </div>
         </div>
         <div class="add-slider">
@@ -203,8 +204,42 @@
 
     <script src="./public/js/jquery/jquery.min.js"></script>
     <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/sweetalert/sweetalert2.all.min.js"></script>
     <script src="./public/js/swiper/swiper-bundle.min.js"></script>
     <script src="./public/js/common.js"></script>
+
+    <script>
+        function settingSettingError(){
+            Swal.fire({
+                icon: 'error',
+                title: '設定失敗',
+            })
+        }
+        function settingSettingSuccess(){
+            Swal.fire({
+                icon: 'success',
+                title: '設定成功',
+            })
+        }
+        function settingConfirm(){
+            Swal.fire({
+                title: '<div class="mt-4">確定刪除？</div>',
+                confirmButtonText: '確定',
+            })
+        }
+        function settingDeleteError(){
+            Swal.fire({
+                icon: 'error',
+                title: '刪除失敗',
+            })
+        }
+        function settingDeleteSuccess(){
+            Swal.fire({
+                icon: 'success',
+                title: '刪除成功',
+            })
+        }
+    </script>
 
 </body>
 </html>

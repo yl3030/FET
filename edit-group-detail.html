@@ -7,6 +7,7 @@
     <title>遠傳電信來電答鈴小網</title>
     <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="./public/css/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./public/css/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
@@ -89,7 +90,7 @@
                     <input type="text" class="input" placeholder="請輸入門號">
                 </div>
             </div>
-            <button class="btn-redBg-big mb-3">確定</button>
+            <button class="btn-redBg-big mb-3" onclick="settingSettingError()">確定</button>
             <p class="text-center">※ 門號上限10組，每新增一個群組收費 <span class="color-primary fw-bold">10元</span></p>
         </div>
     </main>
@@ -108,8 +109,24 @@
 
     <script src="./public/js/jquery/jquery.min.js"></script>
     <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/sweetalert/sweetalert2.all.min.js"></script>
     <script src="./public/js/swiper/swiper-bundle.min.js"></script>
     <script src="./public/js/common.js"></script>
+
+    <script>
+        function settingSettingError(){
+            Swal.fire({
+                icon: 'error',
+                title: '設定失敗',
+            })
+        }
+        function settingSettingSuccess(){
+            Swal.fire({
+                icon: 'success',
+                title: '設定成功',
+            })
+        }
+    </script>
 
 </body>
 </html>
