@@ -92,6 +92,10 @@ main.page-more-inner {
   padding-top: 40px;
 }
 
+main.page-free {
+  padding-top: 171.8px;
+}
+
 .container {
   max-width: 720px;
   padding-left: 0;
@@ -394,6 +398,10 @@ main.page-more-inner {
   cursor: pointer;
 }
 
+.header_search img {
+  width: 100%;
+}
+
 .header_nav .row {
   margin-left: -16px;
   margin-right: -16px;
@@ -456,11 +464,14 @@ main.page-more-inner {
 
 .header_searchBar_arrow {
   cursor: pointer;
-  width: 36px;
+  width: 36px !important;
+  position: static !important;
+  -webkit-transform: none !important;
+          transform: none !important;
 }
 
 .header_searchBar_arrow img {
-  width: 24px;
+  width: 24px !important;
 }
 
 .header_searchBar_input {
@@ -1283,11 +1294,11 @@ main.page-more-inner {
   transition: 0.3s;
 }
 
-.tab-record.try::after {
+.tab-record.left::after {
   left: 0;
 }
 
-.tab-record.buy::after {
+.tab-record.right::after {
   left: 50%;
 }
 

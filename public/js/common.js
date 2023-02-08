@@ -50,21 +50,21 @@ $(".header_arrow").click(function(){
 })
 
 function tabRecord(){
-    if($("#pills-try-tab").hasClass("active")){
-        $(this).parents(".tab-record").removeClass("buy").addClass("try");
+    if($("#pills-left-tab").hasClass("active")){
+        $(this).parents(".tab-record").removeClass("right").addClass("left");
     }
-    if($("#pills-buy-tab").hasClass("active")){
-        $(this).parents(".tab-record").removeClass("try").addClass("buy");
+    if($("#pills-right-tab").hasClass("active")){
+        $(this).parents(".tab-record").removeClass("left").addClass("right");
     }
 }
 
 tabRecord();
 
-$("#pills-try-tab").click(function(){
-    $(this).parents(".tab-record").removeClass("buy").addClass("try");
+$("#pills-left-tab").click(function(){
+    $(this).parents(".tab-record").removeClass("right").addClass("left");
 })
-$("#pills-buy-tab").click(function(){
-    $(this).parents(".tab-record").removeClass("try").addClass("buy");
+$("#pills-right-tab").click(function(){
+    $(this).parents(".tab-record").removeClass("left").addClass("right");
 })
 
 $(".songList-smallPic").each(function(){

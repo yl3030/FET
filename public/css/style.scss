@@ -97,6 +97,9 @@ main {
     &.page-more-inner {
         padding-top: 40px;
     }
+    &.page-free {
+        padding-top: 171.8px;
+    }
 }
 
 .container {
@@ -330,6 +333,9 @@ main {
         top: 50%;
         transform: translateY(-50%);
         cursor: pointer;
+        img {
+            width: 100%;
+        }
     }
     &_nav {
         .row {
@@ -388,9 +394,11 @@ main {
     &_searchBar {
         &_arrow {
             cursor: pointer;
-            width: 36px;
+            width: 36px !important;
+            position: static !important;
+            transform: none !important;
             img {
-                width: 24px;
+                width: 24px !important;
             }
         }
         &_input {
@@ -1047,12 +1055,12 @@ main {
             bottom: 0;
             transition: 0.3s;
         }
-        &.try {
+        &.left {
             &::after {
                 left: 0;
             }
         }
-        &.buy {
+        &.right {
             &::after {
                 left: 50%;
             }
