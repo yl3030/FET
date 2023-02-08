@@ -175,6 +175,9 @@ main {
         &[disabled] {
             background-color: #9B9B9B;
         }
+        &:hover {
+            color: #fff;
+        }
     }
     &-download {
         &-text {
@@ -206,6 +209,7 @@ main {
             height: 28px;
             border-radius: 50%;
             position: relative;
+            display: block;
             &::before {
                 position: absolute;
                 content: "";
@@ -244,6 +248,10 @@ main {
                 }
             }
         }
+    }
+    &-clean {
+        color: $dark;
+        font-size: 14px;
     }
 }
 
@@ -308,6 +316,11 @@ main {
             margin: 0;
             font-size: 16px;
             font-weight: normal;
+            padding: 0 55px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            overflow: hidden;
         }
     }
     &_search {
@@ -388,10 +401,18 @@ main {
             align-items: center;
             justify-content: space-between;
             padding: 0 12px;
+            transition: 0.3s;
             input {
                 width: calc(100% - 56px - 8px);
                 height: 100%;
                 font-size: 14px;
+                &::placeholder {
+                    font-size: 14px;
+                    color: #D6D6D6;
+                }
+            }
+            &.focus {
+                border-color: #4F5E72;
             }
         }
         &_btn {
@@ -732,6 +753,43 @@ main {
                 font-size: 12px;
                 margin: 0;
             }
+        }
+    }
+    &-replace {
+        &_item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &_text {
+            padding-left: 8px;
+            width: calc(100% - 48px - 52px);
+            h4 {
+                font-size: 16px;
+                font-weight: normal;
+                margin-bottom: 4px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+            }
+            p {
+                color: $dark;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
+                font-size: 12px;
+                margin: 0;
+            }
+        }
+        .btn-redBg {
+            width: 52px;
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }
@@ -1113,22 +1171,12 @@ main {
             display: flex;
             align-items: center;
             position: relative;
-            cursor: pointer;
             span {
                 width: calc(100% - 28px);
-                padding: 0 12px 0 4px;
+                padding: 0 12px 0 0;
             }
             img {
                 width: 28px;
-            }
-            &::before {
-                position: absolute;
-                content: "";
-                width: 4px;
-                background-color: $primary;
-                height: 100%;
-                top: 0;
-                left: 0;
             }
         }
         &_list {
@@ -1147,6 +1195,42 @@ main {
                 transition: 0.3s;
                 &.active, &:hover {
                     background-color: #E8ECF0;
+                }
+            }
+        }
+        &:not(.empty) {
+            .my_setting_active {
+                cursor: pointer;
+            }
+        }
+        &.current {
+            .my_setting {
+                &_active {
+                    span {
+                        padding: 0 12px 0 4px;
+                    }
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        width: 4px;
+                        background-color: $primary;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+        &.empty {
+            .my_setting {
+                &_active {
+                    span {
+                        padding-left: 0;
+                        color: $gray-bf;
+                    }
+                    &::before {
+                        display: none;
+                    }
                 }
             }
         }
@@ -1323,6 +1407,10 @@ main {
             }
             .input {
                 width: calc(100% - 28px);
+                transition: 0.3s;
+                &:focus {
+                    border-color: #4F5E72;
+                }
             }
             &.wrong {
                 .input {
@@ -1385,4 +1473,126 @@ main {
 .swal2-popup {
     border-radius: 0 !important;
     width: 320px !important;
+}
+
+.download {
+    padding: 24px 36px 60px;
+    &_pic {
+        max-width: 200px;
+        width: 100%;
+        margin: 0 auto 24px;
+        .songList_pic {
+            width: 100%;
+            padding-bottom: 100%;
+        }
+        .songList-smallPic_icon {
+            width: 36px;
+            height: 36px;
+            right: 12px;
+            bottom: 12px;
+        }
+    }
+    &_title {
+        text-align: center;
+        font-size: 16px;
+        font-weight: normal;
+        margin-bottom: 12px;
+    }
+    &_name, &_num {
+        text-align: center;
+        font-size: 14px;
+        color: $dark;
+        font-weight: normal;
+    }
+    &_name {
+        margin-bottom: 12px;
+    }
+    &_num {
+        margin-bottom: 24px;
+    }
+    &_price {
+        text-align: center;
+        margin-bottom: 24px;
+        p {
+            &:not(:last-child) {
+                margin-bottom: 6px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        span {
+            font-size: 18px;
+        }
+    }
+    .btn-redBg-big {
+        max-width: 240px;
+        background-color: $primary;
+        height: 47px;
+        margin: 0 auto 16px;
+        font-size: 16px;
+    }
+    &_remark {
+        font-size: 14px;
+        color: $dark;
+        margin: 0;
+        text-align: center;
+    }
+    &-result {
+        padding: 32px 36px 60px;
+        text-align: center;
+        &_icon {
+            width: 100px;
+            display: block;
+            margin: 0 auto 12px;
+        }
+        &_music {
+            font-size: 16px;
+            font-weight: normal;
+        }
+        &_name {
+            font-size: 14px;
+            font-weight: normal;
+        }
+        &_remark {
+            font-size: 14px;
+            color: $dark;
+        }
+    }
+}
+
+.search {
+    &_tag {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        li {
+            border: 1px solid #FC7B66;
+            border-radius: 5px;
+            margin: 0 12px 12px 0;
+            a {
+                font-size: 14px;
+                padding: 6px 8px;
+                display: block;
+            }
+        }
+    }
+    &_list {
+        padding: 0 6px;
+        cursor: pointer;
+        &_item {
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            a {
+                display: block;
+                width: calc(100% - 32px);
+                padding-right: 12px;
+            }
+            button {
+                width: 32px;
+                padding: 0;
+            }
+        }
+    }
 }

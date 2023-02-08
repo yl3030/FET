@@ -16,8 +16,8 @@
             <div class="header_searchBar px-3 py-2 d-flex align-items-center">
                 <div class="header_searchBar_arrow"><img src="./public/img/icon/arrow-left.svg" alt=""></div>
                 <div class="header_searchBar_input">
-                    <input type="text">
-                    <button class="header_searchBar_btn"><img src="./public/img/icon/false.svg" alt=""></button>
+                    <input type="text" placeholder="輸入歌手/歌名/代碼">
+                    <!-- <button class="header_searchBar_btn"><img src="./public/img/icon/false.svg" alt=""></button> -->
                     <button class="header_searchBar_btn"><img src="./public/img/icon/search-red.svg" alt=""></button>
                 </div>
             </div>
@@ -25,187 +25,52 @@
     </header>
 
     <main class="container page-search">
-        <!-- 
-            下載鍵說明：
-            <button class="btn-download-icon normal"></button> 立即下載
-            <button class="btn-download-icon downloading"></button> 下載中
-            <button class="btn-download-icon downloaded"></button>  已下載
-        -->
-
-        <div class="pt-4">
-            <div class="songList-smallPic px-3">
-                <div class="songList-smallPic_item">
-                    <div class="songList-smallPic_num">1</div>
-                    <div class="songList_pic songList-smallPic_pic">
-                        <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
-                        <div class="songList-smallPic_icon">
-                            <img class="play" src="./public/img/btn/play.svg" alt="">
-                            <img class="stop" src="./public/img/btn/stop.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="songList-smallPic_text">
-                        <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
-                        <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
-                    </div>
-                    <div class="songList-smallPic_download">
-                        <button class="btn-download-icon normal"></button>
-                    </div>
+        <div class="px-3 pt-2 mb-12">
+            <div class="title mb-12">
+                <img src="./public/img/icon/hot.svg" alt="">
+                <h3 class="title_text">熱門關鍵字</h3>
+            </div>
+            <ul class="search_tag">
+                <li><a href="./search-result.html">五月天</a></li>
+                <li><a href="./search-result.html">黃明志</a></li>
+                <li><a href="./search-result.html">愛上你算我賤</a></li>
+                <li><a href="./search-result.html">如果可以</a></li>
+                <li><a href="./search-result.html">玻璃心</a></li>
+                <li><a href="./search-result.html">瘦子</a></li>
+                <li><a href="./search-result.html">丁魚系</a></li>
+                <li><a href="./search-result.html">熱門關鍵字熱門關鍵</a></li>
+            </ul>
+        </div>
+        <div class="px-3">
+            <div class="d-flex align-items-center justify-content-between mb-12">
+                <div class="title">
+                    <img src="./public/img/icon/hot.svg" alt="">
+                    <h3 class="title_text">熱門關鍵字</h3>
                 </div>
-                <div class="songList-smallPic_item">
-                    <div class="songList-smallPic_num">2</div>
-                    <div class="songList_pic songList-smallPic_pic">
-                        <img class="songList-smallPic_pic_main" src="./public/img/unsplash_gwE9vXSi7Xw2.png" alt="">
-                        <div class="songList-smallPic_icon">
-                            <img class="play" src="./public/img/btn/play.svg" alt="">
-                            <img class="stop" src="./public/img/btn/stop.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="songList-smallPic_text">
-                        <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
-                        <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
-                    </div>
-                    <div class="songList-smallPic_download">
-                        <button class="btn-download-icon downloading"></button>
-                    </div>
+                <button class="btn-clean">全部清除</button>
+            </div>
+            <div class="search_list">
+                <div class="search_list_item">
+                    <a href="./search-result.html">BLACKPINK</a>
+                    <button><img src="./public/img/icon/false.svg" alt=""></button>
                 </div>
-                <div class="songList-smallPic_item">
-                    <div class="songList-smallPic_num">3</div>
-                    <div class="songList_pic songList-smallPic_pic">
-                        <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW83.png" alt="">
-                        <div class="songList-smallPic_icon">
-                            <img class="play" src="./public/img/btn/play.svg" alt="">
-                            <img class="stop" src="./public/img/btn/stop.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="songList-smallPic_text">
-                        <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
-                        <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
-                    </div>
-                    <div class="songList-smallPic_download">
-                        <button class="btn-download-icon downloaded"></button>
-                    </div>
+                <div class="search_list_item">
+                    <a href="./search-result.html">BLACKPINK</a>
+                    <button><img src="./public/img/icon/false.svg" alt=""></button>
                 </div>
-                <div class="songList-smallPic_item">
-                    <div class="songList-smallPic_num">4</div>
-                    <div class="songList_pic songList-smallPic_pic">
-                        <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW84.png" alt="">
-                        <div class="songList-smallPic_icon">
-                            <img class="play" src="./public/img/btn/play.svg" alt="">
-                            <img class="stop" src="./public/img/btn/stop.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="songList-smallPic_text">
-                        <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
-                        <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
-                    </div>
-                    <div class="songList-smallPic_download">
-                        <button class="btn-download-icon downloaded"></button>
-                    </div>
+                <div class="search_list_item">
+                    <a href="./search-result.html">BLACKPINK</a>
+                    <button><img src="./public/img/icon/false.svg" alt=""></button>
                 </div>
-                <div class="songList-smallPic_item">
-                    <div class="songList-smallPic_num">5</div>
-                    <div class="songList_pic songList-smallPic_pic">
-                        <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW85.png" alt="">
-                        <div class="songList-smallPic_icon">
-                            <img class="play" src="./public/img/btn/play.svg" alt="">
-                            <img class="stop" src="./public/img/btn/stop.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="songList-smallPic_text">
-                        <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
-                        <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
-                    </div>
-                    <div class="songList-smallPic_download">
-                        <button class="btn-download-icon downloaded"></button>
-                    </div>
+                <div class="search_list_item">
+                    <a href="./search-result.html">BLACKPINK</a>
+                    <button><img src="./public/img/icon/false.svg" alt=""></button>
                 </div>
-                <div class="songList-smallPic_item">
-                    <div class="songList-smallPic_num">6</div>
-                    <div class="songList_pic songList-smallPic_pic">
-                        <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW86.png" alt="">
-                        <div class="songList-smallPic_icon">
-                            <img class="play" src="./public/img/btn/play.svg" alt="">
-                            <img class="stop" src="./public/img/btn/stop.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="songList-smallPic_text">
-                        <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
-                        <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
-                    </div>
-                    <div class="songList-smallPic_download">
-                        <button class="btn-download-icon downloaded"></button>
-                    </div>
-                </div>
-                <div class="songList-smallPic_item">
-                    <div class="songList-smallPic_num">7</div>
-                    <div class="songList_pic songList-smallPic_pic">
-                        <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
-                        <div class="songList-smallPic_icon">
-                            <img class="play" src="./public/img/btn/play.svg" alt="">
-                            <img class="stop" src="./public/img/btn/stop.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="songList-smallPic_text">
-                        <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
-                        <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
-                    </div>
-                    <div class="songList-smallPic_download">
-                        <button class="btn-download-icon downloaded"></button>
-                    </div>
-                </div>
-                <div class="songList-smallPic_item">
-                    <div class="songList-smallPic_num">8</div>
-                    <div class="songList_pic songList-smallPic_pic">
-                        <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW82.png" alt="">
-                        <div class="songList-smallPic_icon">
-                            <img class="play" src="./public/img/btn/play.svg" alt="">
-                            <img class="stop" src="./public/img/btn/stop.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="songList-smallPic_text">
-                        <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
-                        <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
-                    </div>
-                    <div class="songList-smallPic_download">
-                        <button class="btn-download-icon downloaded"></button>
-                    </div>
-                </div>
-                <div class="songList-smallPic_item">
-                    <div class="songList-smallPic_num">9</div>
-                    <div class="songList_pic songList-smallPic_pic">
-                        <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW83.png" alt="">
-                        <div class="songList-smallPic_icon">
-                            <img class="play" src="./public/img/btn/play.svg" alt="">
-                            <img class="stop" src="./public/img/btn/stop.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="songList-smallPic_text">
-                        <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
-                        <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
-                    </div>
-                    <div class="songList-smallPic_download">
-                        <button class="btn-download-icon downloaded"></button>
-                    </div>
-                </div>
-                <div class="songList-smallPic_item">
-                    <div class="songList-smallPic_num">10</div>
-                    <div class="songList_pic songList-smallPic_pic">
-                        <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW84.png" alt="">
-                        <div class="songList-smallPic_icon">
-                            <img class="play" src="./public/img/btn/play.svg" alt="">
-                            <img class="stop" src="./public/img/btn/stop.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="songList-smallPic_text">
-                        <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
-                        <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
-                    </div>
-                    <div class="songList-smallPic_download">
-                        <button class="btn-download-icon downloaded"></button>
-                    </div>
+                <div class="search_list_item">
+                    <a href="./search-result.html">BLACKPINK</a>
+                    <button><img src="./public/img/icon/false.svg" alt=""></button>
                 </div>
             </div>
-
         </div>
     </main>
 

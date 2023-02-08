@@ -174,6 +174,10 @@ main.page-more-inner {
   background-color: #9B9B9B;
 }
 
+.btn-redBg-big:hover {
+  color: #fff;
+}
+
 .btn-download-text {
   width: 100%;
   height: 32px;
@@ -216,6 +220,7 @@ main.page-more-inner {
   height: 28px;
   border-radius: 50%;
   position: relative;
+  display: block;
 }
 
 .btn-download-icon::before {
@@ -264,6 +269,11 @@ main.page-more-inner {
 
 .btn-download-icon.downloaded::before {
   background-image: url(../img/icon/true.svg);
+}
+
+.btn-clean {
+  color: #8A8A8A;
+  font-size: 14px;
 }
 
 .link {
@@ -367,6 +377,11 @@ main.page-more-inner {
   margin: 0;
   font-size: 16px;
   font-weight: normal;
+  padding: 0 55px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
 }
 
 .header_search {
@@ -462,12 +477,38 @@ main.page-more-inner {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 0 12px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .header_searchBar_input input {
   width: calc(100% - 56px - 8px);
   height: 100%;
   font-size: 14px;
+}
+
+.header_searchBar_input input::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #D6D6D6;
+}
+
+.header_searchBar_input input:-ms-input-placeholder {
+  font-size: 14px;
+  color: #D6D6D6;
+}
+
+.header_searchBar_input input::-ms-input-placeholder {
+  font-size: 14px;
+  color: #D6D6D6;
+}
+
+.header_searchBar_input input::placeholder {
+  font-size: 14px;
+  color: #D6D6D6;
+}
+
+.header_searchBar_input.focus {
+  border-color: #4F5E72;
 }
 
 .header_searchBar_btn {
@@ -865,6 +906,51 @@ main.page-more-inner {
   overflow: hidden;
   font-size: 12px;
   margin: 0;
+}
+
+.songList-replace_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.songList-replace_item:last-child {
+  margin-bottom: 0;
+}
+
+.songList-replace_text {
+  padding-left: 8px;
+  width: calc(100% - 48px - 52px);
+}
+
+.songList-replace_text h4 {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.songList-replace_text p {
+  color: #8A8A8A;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  font-size: 12px;
+  margin: 0;
+}
+
+.songList-replace .btn-redBg {
+  width: 52px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @-webkit-keyframes loading {
@@ -1334,26 +1420,15 @@ main.page-more-inner {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  cursor: pointer;
 }
 
 .my_setting_active span {
   width: calc(100% - 28px);
-  padding: 0 12px 0 4px;
+  padding: 0 12px 0 0;
 }
 
 .my_setting_active img {
   width: 28px;
-}
-
-.my_setting_active::before {
-  position: absolute;
-  content: "";
-  width: 4px;
-  background-color: #D3060F;
-  height: 100%;
-  top: 0;
-  left: 0;
 }
 
 .my_setting_list {
@@ -1378,6 +1453,33 @@ main.page-more-inner {
 
 .my_setting_list li.active, .my_setting_list li:hover {
   background-color: #E8ECF0;
+}
+
+.my_setting:not(.empty) .my_setting_active {
+  cursor: pointer;
+}
+
+.my_setting.current .my_setting_active span {
+  padding: 0 12px 0 4px;
+}
+
+.my_setting.current .my_setting_active::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  background-color: #D3060F;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.my_setting.empty .my_setting_active span {
+  padding-left: 0;
+  color: #BFBFBF;
+}
+
+.my_setting.empty .my_setting_active::before {
+  display: none;
 }
 
 .add-slider {
@@ -1600,6 +1702,12 @@ main.page-more-inner {
 
 .group_setting_item .input {
   width: calc(100% - 28px);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.group_setting_item .input:focus {
+  border-color: #4F5E72;
 }
 
 .group_setting_item.wrong .input {
@@ -1656,5 +1764,156 @@ main.page-more-inner {
 .swal2-popup {
   border-radius: 0 !important;
   width: 320px !important;
+}
+
+.download {
+  padding: 24px 36px 60px;
+}
+
+.download_pic {
+  max-width: 200px;
+  width: 100%;
+  margin: 0 auto 24px;
+}
+
+.download_pic .songList_pic {
+  width: 100%;
+  padding-bottom: 100%;
+}
+
+.download_pic .songList-smallPic_icon {
+  width: 36px;
+  height: 36px;
+  right: 12px;
+  bottom: 12px;
+}
+
+.download_title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 12px;
+}
+
+.download_name, .download_num {
+  text-align: center;
+  font-size: 14px;
+  color: #8A8A8A;
+  font-weight: normal;
+}
+
+.download_name {
+  margin-bottom: 12px;
+}
+
+.download_num {
+  margin-bottom: 24px;
+}
+
+.download_price {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.download_price p:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.download_price p:last-child {
+  margin-bottom: 0;
+}
+
+.download_price span {
+  font-size: 18px;
+}
+
+.download .btn-redBg-big {
+  max-width: 240px;
+  background-color: #D3060F;
+  height: 47px;
+  margin: 0 auto 16px;
+  font-size: 16px;
+}
+
+.download_remark {
+  font-size: 14px;
+  color: #8A8A8A;
+  margin: 0;
+  text-align: center;
+}
+
+.download-result {
+  padding: 32px 36px 60px;
+  text-align: center;
+}
+
+.download-result_icon {
+  width: 100px;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.download-result_music {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.download-result_name {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.download-result_remark {
+  font-size: 14px;
+  color: #8A8A8A;
+}
+
+.search_tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.search_tag li {
+  border: 1px solid #FC7B66;
+  border-radius: 5px;
+  margin: 0 12px 12px 0;
+}
+
+.search_tag li a {
+  font-size: 14px;
+  padding: 6px 8px;
+  display: block;
+}
+
+.search_list {
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+.search_list_item {
+  padding: 6px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search_list_item a {
+  display: block;
+  width: calc(100% - 32px);
+  padding-right: 12px;
+}
+
+.search_list_item button {
+  width: 32px;
+  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */

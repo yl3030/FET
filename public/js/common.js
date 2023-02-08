@@ -75,7 +75,9 @@ $(".songList-smallPic").each(function(){
 })
 
 $(".my_setting_active").click(function(){
-    $(this).parents(".my_setting").find(".my_setting_list").slideToggle(300);
+    if(!$(this).parents(".my_setting").hasClass("empty")) {
+        $(this).parents(".my_setting").find(".my_setting_list").slideToggle(300);
+    }
 })
 $(document).click(function (event) {
     var setting = $(".my_setting");
@@ -120,3 +122,13 @@ $(".switch").click(function(){
     $(this).toggleClass("active");
 })
 
+$(".header_searchBar_input input").keydown(function(){
+    $(this).parents(".header_searchBar_input").addClass("focus");
+})
+
+$(".header_searchBar_input input").keyup(function(){
+    let val = $(this).val();
+    if(val == ""){
+        $(this).parents(".header_searchBar_input").removeClass("focus");
+    }
+})
