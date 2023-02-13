@@ -41,8 +41,11 @@
 }
 
 body {
-  font-family: 'Noto Sans TC', sans-serif;
   color: #231F20;
+}
+
+* {
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 ul {
@@ -58,6 +61,10 @@ a {
 
 a:hover {
   color: #231F20;
+}
+
+p {
+  line-height: 1.4 !important;
 }
 
 button {
@@ -77,7 +84,7 @@ input {
 
 main {
   padding-top: 126.8px;
-  min-height: calc(100vh - 177px);
+  min-height: calc(100vh - 107.53px);
 }
 
 main.page-search {
@@ -94,6 +101,16 @@ main.page-more-inner {
 
 main.page-free {
   padding-top: 171.8px;
+}
+
+main.page-tab {
+  padding-top: 125px;
+}
+
+@media screen and (max-width: 960px) {
+  main {
+    min-height: calc(100vh - 157.53px);
+  }
 }
 
 .container {
@@ -148,14 +165,14 @@ main.page-free {
 
 .btn-redBorder {
   font-size: 14px;
-  color: #D3060F;
+  color: #D3060F !important;
   padding: 6px 12px;
   border: 1px solid #D3060F;
 }
 
 .btn-redBg {
   font-size: 14px;
-  color: #fff;
+  color: #fff !important;
   padding: 6px 12px;
   background-color: #D3060F;
   display: block;
@@ -164,13 +181,14 @@ main.page-free {
 
 .btn-redBg-big {
   font-size: 16px;
-  color: #fff;
+  color: #fff !important;
   padding: 12px;
   background-color: #D3060F;
   max-width: 240px;
   width: 100%;
-  display: block;
-  margin: 0 auto;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   text-align: center;
 }
 
@@ -185,11 +203,11 @@ main.page-free {
 .btn-download-text {
   width: 100%;
   height: 32px;
-  color: #fff;
+  color: #fff !important;
   font-size: 14px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -369,15 +387,11 @@ main.page-free {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   position: relative;
   border-bottom: 1px solid #EFF1F2;
 }
 
 .header_title h1 {
-  text-align: center;
   margin: 0;
   font-size: 16px;
   font-weight: normal;
@@ -1186,11 +1200,11 @@ main.page-free {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 10;
+  z-index: 15;
 }
 
 .footer_top img {
-  width: 30px;
+  width: 16px;
 }
 
 @media screen and (max-width: 720px) {
@@ -1266,10 +1280,6 @@ main.page-free {
   border-bottom: 1px solid #EFF1F2;
 }
 
-.tab-record .nav-item {
-  width: 50%;
-}
-
 .tab-record .nav-link {
   text-align: center;
   width: 100%;
@@ -1283,12 +1293,11 @@ main.page-free {
   color: #D3060F;
 }
 
-.tab-record::after {
+.tab-record_line {
   position: absolute;
-  content: "";
   height: 3px;
-  width: 50%;
   background-color: #D3060F;
+  left: 0;
   bottom: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -1563,6 +1572,151 @@ main.page-free {
   color: #fff;
 }
 
+.musicBoxList-bigPic_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.musicBoxList-bigPic_item:last-child {
+  margin-bottom: 0;
+}
+
+.musicBoxList-bigPic_item.loading .musicBoxList-bigPic_num .loading-square {
+  width: 24px;
+  height: 24px;
+  background-color: #e7e7e7;
+}
+
+.musicBoxList-bigPic_item.loading .musicBoxList-bigPic_pic {
+  background-color: #e7e7e7;
+}
+
+.musicBoxList-bigPic_item.loading .musicBoxList-bigPic_text .loading-box-long {
+  width: 100%;
+  height: 14px;
+  margin-bottom: 6px;
+  background-color: #e7e7e7;
+}
+
+.musicBoxList-bigPic_item.loading .musicBoxList-bigPic_text .loading-box-short {
+  width: 74px;
+  height: 14px;
+  background-color: #e7e7e7;
+  margin-left: auto;
+}
+
+.musicBoxList-bigPic_num {
+  width: 32px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.musicBoxList-bigPic_pic {
+  width: 84px;
+  height: 84px;
+  position: relative;
+}
+
+.musicBoxList-bigPic_pic > img {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.musicBoxList-bigPic_text {
+  width: calc(100% - 32px - 84px);
+  padding-left: 8px;
+}
+
+.musicBoxList-bigPic_text h2 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.musicBoxList-bigPic_text ul {
+  margin-bottom: 6px;
+}
+
+.musicBoxList-bigPic_text ul li {
+  font-size: 12px;
+  color: #8A8A8A;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.musicBoxList-bigPic_text .topicList_look {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.musicBoxList-num {
+  border-top: 1px solid #d6d6d6;
+  margin-bottom: 40px;
+}
+
+.musicBoxList-num_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.musicBoxList-num_item:last-child {
+  margin-bottom: 0;
+}
+
+.musicBoxList-num_num {
+  width: 32px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.musicBoxList-num_text {
+  width: calc(100% - 32px - 48px);
+  padding-left: 8px;
+}
+
+.musicBoxList-num_text h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.musicBoxList-num_text p {
+  font-size: 12px;
+  color: #8A8A8A;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  margin: 0;
+}
+
 .musicBox_title {
   margin: 12px 0;
   padding: 16px 24px;
@@ -1609,9 +1763,9 @@ main.page-free {
 }
 
 .group_add {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

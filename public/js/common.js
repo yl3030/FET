@@ -49,23 +49,42 @@ $(".header_arrow").click(function(){
     history.back();
 })
 
-function tabRecord(){
-    if($("#pills-left-tab").hasClass("active")){
-        $(this).parents(".tab-record").removeClass("right").addClass("left");
-    }
-    if($("#pills-right-tab").hasClass("active")){
-        $(this).parents(".tab-record").removeClass("left").addClass("right");
-    }
+// function tabRecord(){
+//     if($("#pills-left-tab").hasClass("active")){
+//         $(this).parents(".tab-record").removeClass("right").addClass("left");
+//     }
+//     if($("#pills-right-tab").hasClass("active")){
+//         $(this).parents(".tab-record").removeClass("left").addClass("right");
+//     }
+// }
+
+// tabRecord();
+
+// $("#pills-left-tab").click(function(){
+//     $(this).parents(".tab-record").removeClass("right").addClass("left");
+// })
+// $("#pills-right-tab").click(function(){
+//     $(this).parents(".tab-record").removeClass("left").addClass("right");
+// })
+
+function tabCommon() {
+    let num = $(".tab-record .nav-item").length;
+    let width = 100 / num;
+    $(".tab-record .nav-item").css("width", width + "%");
+    $(".tab-record_line").css("width", width + "%");
 }
 
-tabRecord();
+tabCommon();
 
-$("#pills-left-tab").click(function(){
-    $(this).parents(".tab-record").removeClass("right").addClass("left");
+$(".tab-record .nav-item").click(function(){
+    let num = $(".tab-record .nav-item").length;
+    let width = 100 / num;
+    let index = $(this).index();
+    let left = width * index;
+    $(".tab-record_line").css("left", left + "%");
 })
-$("#pills-right-tab").click(function(){
-    $(this).parents(".tab-record").removeClass("left").addClass("right");
-})
+
+
 
 $(".songList-smallPic").each(function(){
     $(this).find(".songList-smallPic_num").each(function(i){
@@ -131,4 +150,16 @@ $(".header_searchBar_input input").keyup(function(){
     if(val == ""){
         $(this).parents(".header_searchBar_input").removeClass("focus");
     }
+})
+
+$(".musicBoxList-bigPic_num").each(function(i){
+    if(!$(this).parents(".musicBoxList-bigPic_item").hasClass("loading")) {
+        let num = i + 1;
+        $(this).text(num);
+    }
+})
+
+$(".musicBoxList-num_num").each(function(i){
+    let num = i + 1;
+    $(this).text(num);
 })

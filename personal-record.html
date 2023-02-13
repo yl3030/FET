@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>遠傳電信來電答鈴小網</title>
+    <link rel="shortcut icon" href="https://www.fetnet.net/favicon.ico" />
+    <link rel="stylesheet" href="https://www.fetnet.net/etc.clientlibs/cbu/clientlibs/cbu-react.min.css" type="text/css"/>
     <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="./public/css/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./public/css/style.css">
@@ -26,14 +28,19 @@
             <a href="" class="btn-redBorder">登出</a>
         </div>
         <div class="pb-60">
-            <ul class="nav nav-pills px-3 tab-record left" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="pills-left-tab" data-bs-toggle="pill" data-bs-target="#pills-left" type="button" role="tab" aria-controls="pills-left" aria-selected="true">試聽紀錄</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="pills-right-tab" data-bs-toggle="pill" data-bs-target="#pills-right" type="button" role="tab" aria-controls="pills-right" aria-selected="false">購買記錄</button>
-                </li>
-            </ul>
+            <div class="px-3">
+                <div class="tab-record">
+                  <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="pills-try-tab" data-bs-toggle="pill" data-bs-target="#pills-try" type="button" role="tab" aria-controls="pills-try" aria-selected="true">試聽紀錄</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="pills-buy-tab" data-bs-toggle="pill" data-bs-target="#pills-buy" type="button" role="tab" aria-controls="pills-buy" aria-selected="false">購買記錄</button>
+                    </li>
+                  </ul>
+                  <div class="tab-record_line"></div>
+                </div>
+              </div>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-left" role="tabpanel" aria-labelledby="pills-left-tab">
                     <!-- 
@@ -399,17 +406,61 @@
         </div>
     </main>
 
-    <footer class="footer container">
-        <img class="footer_logo" src="./public/img/fet-logo-white.svg" alt="">
-        <nav class="footer_nav">
-            <ul class="d-flex align-items-center justify-content-center">
-                <li><a href="">關於遠傳</a></li>
-                <li><a href="">隱私權條款</a></li>
-            </ul>
-        </nav>
-        <p class="footer_copyright">遠傳電信版權所有© Far EasTone</p>
-        <div class="footer_top"><img src="./public/img/btn/top.svg" alt=""></div>
+    <footer class="fui-footer blank-footer container">
+        <div class="fui-container">
+          <div class="MuiGrid-root copyright MuiGrid-container" space="1">
+            <div
+              class="
+                MuiGrid-root
+                footer-fetnet
+                MuiGrid-item
+                MuiGrid-grid-xs-12
+                MuiGrid-grid-sm-12
+                MuiGrid-grid-md-12
+              "
+            >
+              <div class="d-flex">
+                <a
+                  rel="noopener"
+                  href="https://www.fetnet.net/content/cbu/tw/index.html"
+                >
+                  <img
+                    src="https://www.fetnet.net/resources/common/images/fetnet-footer-logo.png"
+                    alt="FetnetLogo"
+                    height="30"
+                  />
+                </a>
+                <div class="links">
+                  <a
+                    rel="noopener"
+                    href="https://corporate.fetnet.net/content/corp/tw/index.html"
+                    ><small>關於遠傳</small></a
+                  >
+                  <a
+                    rel="noopener"
+                    href="https://www.fetnet.net/content/cbu/tw/information/fetprivacy.html"
+                    ><small>隱私權政策</small></a
+                  >
+
+                  <a
+                  rel="noopener"
+                  href="https://www.fetnet.net/content/cbu/tw/help-center/contact-us.html"
+                  ><small>聯絡我們</small></a
+                >
+                 
+                  <span class="text-sm is-text-gray100"
+                    >遠傳電信版權所有 © Far EasTone<span
+                      class="d-none d-md-inline"
+                      >Telecommunications Co., Ltd</span
+                    >.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </footer>
+    <div class="footer_top"><img src="./public/img/btn/top.svg" alt=""></div>
 
     <script src="./public/js/jquery/jquery.min.js"></script>
     <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>

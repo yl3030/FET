@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遠傳電信來電答鈴小網</title>
+    <link rel="shortcut icon" href="https://www.fetnet.net/favicon.ico" />
+    <link rel="stylesheet" href="https://www.fetnet.net/etc.clientlibs/cbu/clientlibs/cbu-react.min.css" type="text/css"/>
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./public/css/sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container shadow-none">
+            <div class="header_logo"><img src="./public/img/fet-logo-black.svg" alt=""></div>
+            <div class="header_title">
+                <a class="header_arrow"><img src="./public/img/icon/arrow-left.svg" alt=""></a>
+                <h1>900 來電答鈴</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="container bg-f6 page-inner">
+        <div class="p-3 d-flex align-items-center justify-content-between">
+            <p class="m-0"><span class="color-primary">0988-*8*-8*8</span>，您好！</p>
+            <a href="" class="btn-redBorder">登出</a>
+        </div>
+        <div class="mb-4 px-3">
+            <p class="mb-2">目前播放設定：</p>
+            <!-- <div class="my_setting">...</div>  新增/編輯-->
+            <!-- <div class="my_setting empty">...</div>  尚未設定播放清單-->
+            <!-- <div class="my_setting current">...</div>  目前播放設定-->
+            <div class="my_setting current">
+                <div class="my_setting_active">
+                    <span>我的答鈴清單01</span>
+                    <img src="./public/img/icon/triangle.svg" alt="">
+                </div>
+                <ul class="my_setting_list">
+                    <li class="active">我的答鈴清單01</li>
+                    <li>我的答鈴清單02</li>
+                    <li>我的答鈴清單03</li>
+                    <li>我的答鈴清單04</li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-3">
+            <div class="tab-record">
+                <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="myMusic-tab" data-bs-toggle="pill" data-bs-target="#myMusic" type="button" role="tab" aria-controls="myMusic" aria-selected="true">我的答鈴</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="myMusicBox-tab" data-bs-toggle="pill" data-bs-target="#myMusicBox" type="button" role="tab" aria-controls="myMusicBox" aria-selected="false">我的音樂盒</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="editGroup-tab" data-bs-toggle="pill" data-bs-target="#editGroup" type="button" role="tab" aria-controls="editGroup" aria-selected="false">編輯群組名單</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="preset-tab" data-bs-toggle="pill" data-bs-target="#preset" type="button" role="tab" aria-controls="preset" aria-selected="false">系統預設答鈴</button>
+                    </li>
+                </ul>
+                <div class="tab-record_line"></div>
+            </div>
+        </div>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="myMusic" role="tabpanel" aria-labelledby="myMusic-tab">
+                <div class="songList-check p-3 bg-white">
+                    <div class="songList-check_item">
+                        <div class="songList-check_box">
+                            <div class="cube"><img src="./public/img/icon/check-white.svg" alt=""></div>
+                        </div>
+                        <div class="songList_pic songList-smallPic_pic">
+                            <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
+                            <div class="songList-smallPic_icon">
+                                <img class="play" src="./public/img/btn/play.svg" alt="">
+                                <img class="stop" src="./public/img/btn/stop.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="songList-check_text">
+                            <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
+                            <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
+                        </div>
+                        <button class="btn-redBorder" onclick="settingSettingError()">刪除</button>
+                    </div>
+                    <div class="songList-check_item">
+                        <div class="songList-check_box">
+                            <div class="cube"><img src="./public/img/icon/check-white.svg" alt=""></div>
+                        </div>
+                        <div class="songList_pic songList-smallPic_pic">
+                            <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
+                            <div class="songList-smallPic_icon">
+                                <img class="play" src="./public/img/btn/play.svg" alt="">
+                                <img class="stop" src="./public/img/btn/stop.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="songList-check_text">
+                            <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
+                            <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
+                        </div>
+                        <button class="btn-redBorder" onclick="settingSettingSuccess()">刪除</button>
+                    </div>
+                    <div class="songList-check_item">
+                        <div class="songList-check_box">
+                            <div class="cube"><img src="./public/img/icon/check-white.svg" alt=""></div>
+                        </div>
+                        <div class="songList_pic songList-smallPic_pic">
+                            <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
+                            <div class="songList-smallPic_icon">
+                                <img class="play" src="./public/img/btn/play.svg" alt="">
+                                <img class="stop" src="./public/img/btn/stop.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="songList-check_text">
+                            <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
+                            <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
+                        </div>
+                        <button class="btn-redBorder" onclick="settingConfirm()">刪除</button>
+                    </div>
+                    <div class="songList-check_item">
+                        <div class="songList-check_box">
+                            <div class="cube"><img src="./public/img/icon/check-white.svg" alt=""></div>
+                        </div>
+                        <div class="songList_pic songList-smallPic_pic">
+                            <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
+                            <div class="songList-smallPic_icon">
+                                <img class="play" src="./public/img/btn/play.svg" alt="">
+                                <img class="stop" src="./public/img/btn/stop.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="songList-check_text">
+                            <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
+                            <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
+                        </div>
+                        <button class="btn-redBorder" onclick="settingDeleteSuccess()">刪除</button>
+                    </div>
+                    <div class="songList-check_item">
+                        <div class="songList-check_box">
+                            <div class="cube"><img src="./public/img/icon/check-white.svg" alt=""></div>
+                        </div>
+                        <div class="songList_pic songList-smallPic_pic">
+                            <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
+                            <div class="songList-smallPic_icon">
+                                <img class="play" src="./public/img/btn/play.svg" alt="">
+                                <img class="stop" src="./public/img/btn/stop.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="songList-check_text">
+                            <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
+                            <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
+                        </div>
+                        <button class="btn-redBorder" onclick="settingDeleteError()">刪除</button>
+                    </div>
+                    <div class="songList-check_item">
+                        <div class="songList-check_box">
+                            <div class="cube"><img src="./public/img/icon/check-white.svg" alt=""></div>
+                        </div>
+                        <div class="songList_pic songList-smallPic_pic">
+                            <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
+                            <div class="songList-smallPic_icon">
+                                <img class="play" src="./public/img/btn/play.svg" alt="">
+                                <img class="stop" src="./public/img/btn/stop.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="songList-check_text">
+                            <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
+                            <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
+                        </div>
+                        <button class="btn-redBorder" onclick="settingSettingSuccess()">刪除</button>
+                    </div>
+                    <div class="songList-check_item">
+                        <div class="songList-check_box">
+                            <div class="cube"><img src="./public/img/icon/check-white.svg" alt=""></div>
+                        </div>
+                        <div class="songList_pic songList-smallPic_pic">
+                            <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
+                            <div class="songList-smallPic_icon">
+                                <img class="play" src="./public/img/btn/play.svg" alt="">
+                                <img class="stop" src="./public/img/btn/stop.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="songList-check_text">
+                            <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
+                            <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
+                        </div>
+                        <button class="btn-redBorder" onclick="settingSettingSuccess()">刪除</button>
+                    </div>
+                    <div class="songList-check_item">
+                        <div class="songList-check_box">
+                            <div class="cube"><img src="./public/img/icon/check-white.svg" alt=""></div>
+                        </div>
+                        <div class="songList_pic songList-smallPic_pic">
+                            <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
+                            <div class="songList-smallPic_icon">
+                                <img class="play" src="./public/img/btn/play.svg" alt="">
+                                <img class="stop" src="./public/img/btn/stop.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="songList-check_text">
+                            <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
+                            <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
+                        </div>
+                        <button class="btn-redBorder" onclick="settingSettingSuccess()">刪除</button>
+                    </div>
+                </div>
+                <div class="add-slider">
+                    <button class="btn-redBg-big btn-addSlider" disabled>加入輪播</button>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="myMusicBox" role="tabpanel" aria-labelledby="myMusicBox-tab">
+                <div class="pb-60">
+                    <div class="musicBoxList py-3 px-4 bg-white">
+                        <div class="musicBoxList_item">
+                            <div class="musicBoxList_pic"><img src="./public/img/unsplash_gwE9vXSi7Xw.png" alt=""></div>
+                            <h4 class="musicBoxList_text">完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名</h4>
+                            <div class="musicBoxList_btn">
+                                <a href="./my-musicBox-detail.html" class="btn-redBg">查看</a>
+                                <button class="btn-redBorder" onclick="settingDeleteError()">刪除</button>
+                            </div>
+                        </div>
+                        <div class="musicBoxList_item">
+                            <div class="musicBoxList_pic"><img src="./public/img/unsplash_gwE9vXSi7Xw.png" alt=""></div>
+                            <h4 class="musicBoxList_text">完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名</h4>
+                            <div class="musicBoxList_btn">
+                                <a href="./my-musicBox-detail.html" class="btn-redBg">查看</a>
+                                <button class="btn-redBorder" onclick="settingDeleteSuccess()">刪除</button>
+                            </div>
+                        </div>
+                        <div class="musicBoxList_item">
+                            <div class="musicBoxList_pic"><img src="./public/img/unsplash_gwE9vXSi7Xw.png" alt=""></div>
+                            <h4 class="musicBoxList_text">完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名</h4>
+                            <div class="musicBoxList_btn">
+                                <a href="./my-musicBox-detail.html" class="btn-redBg">查看</a>
+                                <button class="btn-redBorder" onclick="settingDeleteSuccess()">刪除</button>
+                            </div>
+                        </div>
+                        <div class="musicBoxList_item">
+                            <div class="musicBoxList_pic"><img src="./public/img/unsplash_gwE9vXSi7Xw.png" alt=""></div>
+                            <h4 class="musicBoxList_text">完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名</h4>
+                            <div class="musicBoxList_btn">
+                                <a href="./my-musicBox-detail.html" class="btn-redBg">查看</a>
+                                <button class="btn-redBorder" onclick="settingConfirm()">刪除</button>
+                            </div>
+                        </div>
+                        <div class="musicBoxList_item">
+                            <div class="musicBoxList_pic"><img src="./public/img/unsplash_gwE9vXSi7Xw.png" alt=""></div>
+                            <h4 class="musicBoxList_text">完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名</h4>
+                            <div class="musicBoxList_btn">
+                                <a href="./my-musicBox-detail.html" class="btn-redBg">查看</a>
+                                <button class="btn-redBorder" onclick="settingConfirm()">刪除</button>
+                            </div>
+                        </div>
+                        <div class="musicBoxList_item">
+                            <div class="musicBoxList_pic"><img src="./public/img/unsplash_gwE9vXSi7Xw.png" alt=""></div>
+                            <h4 class="musicBoxList_text">完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名</h4>
+                            <div class="musicBoxList_btn">
+                                <a href="./my-musicBox-detail.html" class="btn-redBg">查看</a>
+                                <button class="btn-redBorder" onclick="settingConfirm()">刪除</button>
+                            </div>
+                        </div>
+                        <div class="musicBoxList_item">
+                            <div class="musicBoxList_pic"><img src="./public/img/unsplash_gwE9vXSi7Xw.png" alt=""></div>
+                            <h4 class="musicBoxList_text">完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名</h4>
+                            <div class="musicBoxList_btn">
+                                <a href="./my-musicBox-detail.html" class="btn-redBg">查看</a>
+                                <button class="btn-redBorder" onclick="settingConfirm()">刪除</button>
+                            </div>
+                        </div>
+                        <div class="musicBoxList_item">
+                            <div class="musicBoxList_pic"><img src="./public/img/unsplash_gwE9vXSi7Xw.png" alt=""></div>
+                            <h4 class="musicBoxList_text">完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名完整音樂盒名</h4>
+                            <div class="musicBoxList_btn">
+                                <a href="./my-musicBox-detail.html" class="btn-redBg">查看</a>
+                                <button class="btn-redBorder" onclick="settingConfirm()">刪除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="editGroup" role="tabpanel" aria-labelledby="editGroup-tab">
+                <a href="./edit-group-detail.html" class="group_add px-3 my-3">
+                    <span>新增群組</span>
+                    <img src="./public/img/icon/plus.svg" alt="">
+                </a>
+                <div class="group_list px-3 pb-60">
+                    <div class="group_list_item">
+                        <div class="group_list_text">
+                            <span class="group_list_num">1</span>
+                            <span>群組1</span>
+                        </div>
+                        <div class="group_list_switch">
+                            <div class="switch"><div class="switch_circle"></div></div>
+                        </div>
+                        <a href="./edit-group-detail.html" class="group_list_edit"><img src="./public/img/icon/edit.svg" alt=""></a>
+                    </div>
+                    <div class="group_list_item">
+                        <div class="group_list_text">
+                            <span class="group_list_num">1</span>
+                            <span>群組2</span>
+                        </div>
+                        <div class="group_list_switch">
+                            <div class="switch"><div class="switch_circle"></div></div>
+                        </div>
+                        <a href="./edit-group-detail.html" class="group_list_edit"><img src="./public/img/icon/edit.svg" alt=""></a>
+                    </div>
+                    <div class="group_list_item">
+                        <div class="group_list_text">
+                            <span class="group_list_num">1</span>
+                            <span>群組3</span>
+                        </div>
+                        <div class="group_list_switch">
+                            <div class="switch"><div class="switch_circle"></div></div>
+                        </div>
+                        <a href="./edit-group-detail.html" class="group_list_edit"><img src="./public/img/icon/edit.svg" alt=""></a>
+                    </div>
+                    <div class="group_list_item">
+                        <div class="group_list_text">
+                            <span class="group_list_num">1</span>
+                            <span>群組4</span>
+                        </div>
+                        <div class="group_list_switch">
+                            <div class="switch"><div class="switch_circle"></div></div>
+                        </div>
+                        <a href="./edit-group-detail.html" class="group_list_edit"><img src="./public/img/icon/edit.svg" alt=""></a>
+                    </div>
+                    <div class="group_list_item">
+                        <div class="group_list_text">
+                            <span class="group_list_num">1</span>
+                            <span>群組5</span>
+                        </div>
+                        <div class="group_list_switch">
+                            <div class="switch"><div class="switch_circle"></div></div>
+                        </div>
+                        <a href="./edit-group-detail.html" class="group_list_edit"><img src="./public/img/icon/edit.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="preset" role="tabpanel" aria-labelledby="preset-tab">
+                <div class="songList-musicBox py-3 px-4 bg-white">
+                    <div class="songList-musicBox_item">
+                        <div class="songList_pic songList-smallPic_pic">
+                            <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
+                            <div class="songList-smallPic_icon">
+                                <img class="play" src="./public/img/btn/play.svg" alt="">
+                                <img class="stop" src="./public/img/btn/stop.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="songList-musicBox_text">
+                            <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
+                            <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
+                        </div>
+                    </div>
+                    <div class="songList-musicBox_item">
+                        <div class="songList_pic songList-smallPic_pic">
+                            <img class="songList-smallPic_pic_main" src="./public/img/unsplash_rZBmXd-oqW8.png" alt="">
+                            <div class="songList-smallPic_icon">
+                                <img class="play" src="./public/img/btn/play.svg" alt="">
+                                <img class="stop" src="./public/img/btn/stop.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="songList-musicBox_text">
+                            <h4>完整歌名完整歌名完整歌名完整完整歌名完整完整歌名完整完整歌名完整</h4>
+                            <p>完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名完整歌手名</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="pt-4 pb-5 text-center m-0">※ 使用系統預設答鈴將收費 <span class="color-primary fw-bold">30元/月</span></p>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer class="fui-footer blank-footer container">
+        <div class="fui-container">
+          <div class="MuiGrid-root copyright MuiGrid-container" space="1">
+            <div
+              class="
+                MuiGrid-root
+                footer-fetnet
+                MuiGrid-item
+                MuiGrid-grid-xs-12
+                MuiGrid-grid-sm-12
+                MuiGrid-grid-md-12
+              "
+            >
+              <div class="d-flex">
+                <a
+                  rel="noopener"
+                  href="https://www.fetnet.net/content/cbu/tw/index.html"
+                >
+                  <img
+                    src="https://www.fetnet.net/resources/common/images/fetnet-footer-logo.png"
+                    alt="FetnetLogo"
+                    height="30"
+                  />
+                </a>
+                <div class="links">
+                  <a
+                    rel="noopener"
+                    href="https://corporate.fetnet.net/content/corp/tw/index.html"
+                    ><small>關於遠傳</small></a
+                  >
+                  <a
+                    rel="noopener"
+                    href="https://www.fetnet.net/content/cbu/tw/information/fetprivacy.html"
+                    ><small>隱私權政策</small></a
+                  >
+
+                  <a
+                  rel="noopener"
+                  href="https://www.fetnet.net/content/cbu/tw/help-center/contact-us.html"
+                  ><small>聯絡我們</small></a
+                >
+                 
+                  <span class="text-sm is-text-gray100"
+                    >遠傳電信版權所有 © Far EasTone<span
+                      class="d-none d-md-inline"
+                      >Telecommunications Co., Ltd</span
+                    >.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+    <div class="footer_top"><img src="./public/img/btn/top.svg" alt=""></div>
+
+    
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="./public/js/swiper/swiper-bundle.min.js"></script>
+    <script src="./public/js/common.js"></script>
+
+    <script>
+        function settingSettingError(){
+            Swal.fire({
+                icon: 'error',
+                title: '設定失敗',
+            })
+        }
+        function settingSettingSuccess(){
+            Swal.fire({
+                icon: 'success',
+                title: '設定成功',
+            })
+        }
+        function settingConfirm(){
+            Swal.fire({
+                title: '<div class="mt-4">確定刪除？</div>',
+                confirmButtonText: '確定',
+            })
+        }
+        function settingDeleteError(){
+            Swal.fire({
+                icon: 'error',
+                title: '刪除失敗',
+            })
+        }
+        function settingDeleteSuccess(){
+            Swal.fire({
+                icon: 'success',
+                title: '刪除成功',
+            })
+        }
+    </script>
+
+</body>
+</html>
