@@ -89,7 +89,7 @@ $(".tab-record .nav-item").click(function(){
 $(".songList-smallPic").each(function(){
     $(this).find(".songList-smallPic_num").each(function(i){
         let num = i + 1;
-        $(this).text(num);
+        $(this).find(".inner").text(num);
     })
 })
 

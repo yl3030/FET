@@ -299,7 +299,7 @@ main.page-tab {
 }
 
 .link {
-  color: #2F59C4;
+  color: #2F59C4 !important;
 }
 
 .link:hover {
@@ -710,18 +710,13 @@ main.page-tab {
 
 .songList-smallPic_num {
   width: 32px;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   font-size: 12px;
   font-weight: 700;
+}
+
+.songList-smallPic_num .inner {
+  width: 24px;
+  text-align: center;
 }
 
 .songList-smallPic_pic {
@@ -1283,9 +1278,10 @@ main.page-tab {
 .tab-record .nav-link {
   text-align: center;
   width: 100%;
-  padding: 10px;
+  padding: 10px 0;
   color: #231F20;
   border-radius: 0;
+  font-size: 14px;
 }
 
 .tab-record .nav-link.active {
@@ -1309,6 +1305,18 @@ main.page-tab {
 
 .tab-record.right::after {
   left: 50%;
+}
+
+@media screen and (max-width: 400px) {
+  .tab-record .nav-link {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .tab-record .nav-link {
+    font-size: 12px;
+  }
 }
 
 .message {
@@ -1405,24 +1413,30 @@ main.page-tab {
 }
 
 .coupon_record {
-  width: 100%;
+  width: 100% !important;
   margin-bottom: 32px;
+  display: table !important;
 }
 
 .coupon_record td {
-  border: 1px solid #D6D6D6;
-  padding: 6px 12px;
-  text-align: center;
-  font-size: 14px;
-  color: #4F5E72;
+  border: 1px solid #D6D6D6 !important;
+  padding: 6px 12px !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  color: #4F5E72 !important;
+  height: auto !important;
 }
 
 .coupon_record tr:nth-child(odd) td {
-  background-color: #EFF1F2;
+  background-color: #EFF1F2 !important;
 }
 
-.coupon_record_num {
-  background-color: transparent !important;
+.coupon_record tr:nth-child(odd) td.coupon_record_num {
+  background-color: #fff !important;
+}
+
+.coupon_record tr:nth-child(even) td {
+  background-color: #fff !important;
 }
 
 .my_setting {
