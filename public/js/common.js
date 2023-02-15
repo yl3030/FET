@@ -155,11 +155,11 @@ $(".header_searchBar_input input").keyup(function(){
 $(".musicBoxList-bigPic_num").each(function(i){
     if(!$(this).parents(".musicBoxList-bigPic_item").hasClass("loading")) {
         let num = i + 1;
-        $(this).text(num);
+        $(this).children(".inner").text(num);
     }
 })
 
 $(".musicBoxList-num_num").each(function(i){
     let num = i + 1;
-    $(this).text(num);
+    $(this).children(".inner").text(num);
 })
