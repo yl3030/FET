@@ -1035,6 +1035,11 @@ main.page-tab {
   left: 0;
 }
 
+.topicList_item {
+  display: block;
+  width: 100%;
+}
+
 .topicList_item h4 {
   margin-bottom: 8px;
   line-height: 1.4;

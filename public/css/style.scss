@@ -857,6 +857,8 @@ main {
         }
     }
     &_item {
+        display: block;
+        width: 100%;
         h4 {
             margin-bottom: 8px;
             line-height: 1.4;
