@@ -94,22 +94,26 @@ input {
 }
 
 main {
-    padding-top: 126.8px;
+    padding-top: 146.8px;
     min-height: calc(100vh - 107.53px);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.16);
     &.page-search {
-        padding-top: 96px;
+        padding-top: 116px;
     }
     &.page-inner {
-        padding-top: 80px;
+        padding-top: 100px;
     }
     &.page-more-inner {
         padding-top: 40px;
     }
     &.page-free {
-        padding-top: 171.8px;
+        padding-top: 191.8px;
     }
     &.page-tab {
-        padding-top: 125px;
+        padding-top: 145px;
+    }
+    &.page-onlyLogo {
+        padding-top: 60px;
     }
     @media screen and (max-width: 960px) {
         min-height: calc(100vh - 157.53px);
@@ -1404,6 +1408,7 @@ main {
             width: 84px;
             height: 84px;
             position: relative;
+            cursor: pointer;
             >img {
                 position: absolute;
                 content: "";
@@ -1412,6 +1417,18 @@ main {
                 object-fit: cover;
                 top: 0;
                 left: 0;
+            }
+            &.playing {
+                .musicBoxList-bigPic_icon {
+                    img {
+                        &.play {
+                            opacity: 0;
+                        }
+                        &.stop {
+                            opacity: 1;
+                        }
+                    }
+                }
             }
         }
         &_text {
@@ -1438,6 +1455,25 @@ main {
             }
             .topicList_look {
                 justify-content: flex-end;
+            }
+        }
+        &_icon {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            bottom: 5px;
+            right: 5px;
+            img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                top: 0;
+                left: 0;
+                transition: $transition-common;
+                &.stop {
+                    opacity: 0;
+                }
             }
         }
     }
