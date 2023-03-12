@@ -91,6 +91,7 @@ main {
 
 main.page-search {
   padding-top: 116px;
+  min-height: 100vh;
 }
 
 main.page-inner {
@@ -544,6 +545,7 @@ main.page-onlyLogo {
 
 .header_searchBar_btn {
   width: 28px;
+  padding: 0;
 }
 
 .header_arrow {
@@ -1151,6 +1153,8 @@ main.page-onlyLogo {
   padding: 24px 16px;
   background-color: #231F20;
   position: relative;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.16);
 }
 
 .footer_logo {
@@ -1229,7 +1233,7 @@ main.page-onlyLogo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 1px solid #EFF1F2;
+  border-top: 1px solid #EFF1F2;
 }
 
 .tab-main li {
@@ -1329,6 +1333,10 @@ main.page-onlyLogo {
   .tab-record .nav-link {
     font-size: 12px;
   }
+}
+
+.tab-free li {
+  width: 20%;
 }
 
 .message {
@@ -1800,8 +1808,8 @@ main.page-onlyLogo {
 }
 
 .musicBox_title_pic {
-  width: 48px;
-  height: 48px;
+  width: 84px;
+  height: 84px;
   position: relative;
 }
 
@@ -1816,7 +1824,7 @@ main.page-onlyLogo {
 }
 
 .musicBox_title_text {
-  width: calc(100% - 48px);
+  width: calc(100% - 84px);
   padding-left: 8px;
 }
 
