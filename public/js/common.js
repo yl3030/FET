@@ -163,3 +163,14 @@ $(".musicBoxList-num_num").each(function(i){
     let num = i + 1;
     $(this).children(".inner").text(num);
 })
+
+
+let tabFreeSpanWidth, tabFreeLi;
+$(".tab-free_text").each(function(){
+    tabFreeSpanWidth = $(this).width();
+    tabFreeLi = $(this).parents("li").width();
+    if(tabFreeSpanWidth > tabFreeLi) {
+        $(this).parents("li").css("width",tabFreeSpanWidth + "px");
+    }
+    console.log("tabFreeSpanWidth=" + tabFreeSpanWidth + ",tabFreeLi=" + tabFreeLi);
+})
