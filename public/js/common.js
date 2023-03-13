@@ -170,7 +170,8 @@ $(".tab-free_text").each(function(){
     tabFreeSpanWidth = $(this).width();
     tabFreeLi = $(this).parents("li").width();
     if(tabFreeSpanWidth > tabFreeLi) {
-        $(this).parents("li").css("width",tabFreeSpanWidth + "px");
+        let tabFreeSpanNewWidth = tabFreeSpanWidth + 12;
+        $(this).parents("li").css("width",tabFreeSpanNewWidth + "px");
     }
-    console.log("tabFreeSpanWidth=" + tabFreeSpanWidth + ",tabFreeLi=" + tabFreeLi);
+    // console.log("tabFreeSpanWidth=" + tabFreeSpanWidth + ",tabFreeLi=" + tabFreeLi);
 })
